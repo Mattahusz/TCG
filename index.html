@@ -1,43 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-<meta charset="UTF-8">
-<title>Meu TCG</title>
 
 <style>
 
 body{
-    background:#111;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+ background:#111;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ height:100vh;
+ perspective:1000px;
 }
 
 .card{
-    width:250px;
-    border-radius:20px;
-    cursor:pointer;
-    transition:0.6s;
-    box-shadow:
-      0 0 15px gold,
-      0 0 40px orange;
+ width:250px;
+ border-radius:20px;
+
+ box-shadow:
+   0 0 15px gold,
+   0 0 40px orange,
+   0 0 80px yellow;
+
+ transition:0.6s;
+
+ cursor:pointer;
+
+ animation:pulse 2s infinite;
 }
 
 .card:hover{
-    transform:scale(1.05);
+ transform:
+   rotateY(15deg)
+   rotateX(5deg)
+   scale(1.05);
+}
+
+@keyframes pulse{
+
+ 0%{
+   box-shadow:
+     0 0 10px gold,
+     0 0 30px orange;
+ }
+
+ 50%{
+   box-shadow:
+     0 0 25px yellow,
+     0 0 60px orange;
+ }
+
+ 100%{
+   box-shadow:
+     0 0 10px gold,
+     0 0 30px orange;
+ }
+
 }
 
 </style>
+
 </head>
 
 <body>
 
 <img
  class="card"
- src="seishiro_nagi_7.webp"
+ src="seishiro_nagi_7"
 >
 
 </body>
+
 </html>
